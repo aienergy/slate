@@ -21,22 +21,22 @@ code_clipboard: true
 
 meta:
   - name: description
-    content: Documentation for the Kittn API
+    content: Documentation for the Carbon Data Services API
 ---
 
 # Introduction
 
-This is the official carbon data services APIs for Great Britain and Europe developed by Advanced Infrastructure. You can find out more about Advanced Infrastructure at advanced-infrastructure.co.uk.
+This is the official Carbon Data Services APIs for Great Britain and Europe developed by Advanced Infrastructure. You can find out more about Advanced Infrastructure at advanced-infrastructure.co.uk.
 
 # Summary
 
 Advanced Infrastructure's Carbon Data Services API provides -
 
-1. An indicative figure of local area average carbon intensity at the level of MSOAs in Great Britain (GB) up to 2 days ahead of real-time. It provides programmatic access to both forecast and estimated carbon intensity data. The Carbon Intensity forecast includes CO2 emissions related to electricity generation only. The includes emissions from all large metered power stations, interconnector imports, transmission and distribution losses, and accounts for national electricity demand, embedded wind and solar generation.
+1. An indicative figure of local area average carbon intensity at the level of MSOAs in Great Britain (GB) up to 2 days ahead of real-time. It provides programmatic access to both forecast and estimated carbon intensity data. The carbon intensity forecast includes CO2 emissions related to electricity generation only. The includes emissions from all large metered power stations, interconnector imports, transmission and distribution losses, and accounts for national electricity demand, embedded wind and solar generation.
 
-2. An indicative figure of national average carbon intensity for Europe up to 2 days ahead of real-time. It provides programmatic access to both forecast and estimated carbon intensity data. The Carbon Intensity forecast includes CO2 emissions related to electricity generation information provided by European Network of Transmission System Operators for Electricity.
+2. An indicative figure of national average carbon intensity for Europe up to 2 days ahead of real-time. It provides programmatic access to both forecast and estimated carbon intensity data. The carbon intensity forecast includes CO2 emissions related to electricity generation information provided by European Network of Transmission System Operators for Electricity.
 
-3. An indicative figure of marginal carbon intensity at a national level in Great Britain (GB) up to 2 days ahead of real-time. It provides programmatic access to both forecast and estimated carbon intensity data. The Carbon Intensity forecast includes CO2 emissions related to electricity generation information listed on Elexon's Balancing Mechanism Reporting Service.
+3. An indicative figure of marginal carbon intensity at a national level in Great Britain (GB) up to 2 days ahead of real-time. It provides programmatic access to both forecast and estimated carbon intensity data. The carbon intensity forecast includes CO2 emissions related to electricity generation information listed on Elexon's Balancing Mechanism Reporting Service.
 
 We have language bindings in Shell, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
@@ -64,7 +64,7 @@ curl "api_endpoint_here" \
 
 > Make sure to replace `api_key` with your API key.
 
-All our APIs use API keys to allow access. You can request for a new API key by emailing us at http://dev@advanced-infrastructure.co.uk.
+All our APIs use API keys to allow access. You can make a request for a new API key by making contact through your AI representative or emailing dev@advanced-infrastructure.co.uk
 
 The API key is to be included in all API requests to the server in a header that looks like the following:
 
@@ -235,7 +235,7 @@ $.ajax({
 ]
 ```
 
-This endpoint retrieves the carbon intensity computed for msoas specified in Great Britain (GB)for a specified time frame.
+This endpoint retrieves the carbon intensity computed for msoas specified in Great Britain (GB) for a specified time frame in half hourly intervals.
 
 ### HTTP Request
 
@@ -247,7 +247,7 @@ Parameter | In | Type | Required | Description
 --------- | ------- | ------- | ------- | ----------- | 
 start | path | string | true | Start datetime in in ISO8601 format YYYY-MM-DDThh:mmZ e.g. 2020-01-01T12:00Z
 end | path | string | true | End datetime in in ISO8601 format YYYY-MM-DDThh:mmZ e.g. 2020-01-01T12:30Z
-msoas | path | string | true | List of [msoa object ids](#msoa-middle-super-output-areas) separated by commas
+msoas | path | string | true | List of [MSOA object ids](#msoa-middle-super-output-areas) separated by commas
 
 <!-- <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
@@ -313,7 +313,7 @@ $.ajax({
 ]
 ```
 
-This endpoint retrieves marginal emissions calculated for the region of Great Britain (GB) using the Balancing Mechanism Merit Order algorithm.
+This endpoint retrieves marginal emissions calculated for the region of Great Britain (GB) using the Balancing Mechanism Merit Order algorithm in half hourly intervals.
 
 <!-- <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside> -->
 
